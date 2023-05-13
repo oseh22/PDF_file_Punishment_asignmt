@@ -1,8 +1,8 @@
-from reportlab.pdfgen import canvas
 import subprocess
+from reportlab.pdfgen import canvas
+
 
 # Get user input for text, filename, and path
-# Set the background color
 title = input("Enter file title: ")
 text = input("Enter the text to convert to PDF: ")
 filename = input("Enter the filename for the PDF (without extension): ")
@@ -21,15 +21,15 @@ pdf = canvas.Canvas(f"{path}/{filename}")
 # Set the font and font size
 pdf.setFont("Helvetica", 19)
 
-# Set the title font and background color
-pdf.setFillColorRGB(1, 0, 0)  # red background color
-
+# Set the title font color
+pdf.setFillColorRGB(1, 0, 0)  # red color
 
 # Draw the title
-pdf.drawString(50, 800, title)
+x = 800
+pdf.drawString(200, x, title)
 pdf.setFont("Helvetica", 12)
-# Set the default font color and background color
-pdf.setFillColorRGB(0, 1, 0),  # green font color
+# Set the default font color
+pdf.setFillColorRGB(0, 1, 0) # green font color
 
 
 # Split the text into lines and add to PDF
